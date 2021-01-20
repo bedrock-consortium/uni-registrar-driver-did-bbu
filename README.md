@@ -10,8 +10,7 @@ This is a [Universal Resolver](https://github.com/decentralized-identity/univers
 ## Example DIDs
 
 ```
-did:bbu:WRfXPg8dantKVubE3HX8pw
-did:bbu:stn:WRfXPg8dantKVubE3HX8pw
+did:bbu:ABCDEFGHijklm123456
 ```
 
 ## Configuration
@@ -23,7 +22,7 @@ For downloading the dependencies of this project a Personal Access Token for Git
 ```
 docker build -f ./docker/Dockerfile . -t universalresolver/driver-did-bbu
 docker run -p 8080:8080 universalresolver/driver-did-bbu
-curl -X GET http://localhost:8080/1.0/identifiers/did:bbu:WRfXPg8dantKVubE3HX8pw
+curl -X GET http://localhost:8080/1.0/identifiers/did:bbu:did:bbu:ABCDEFGHijklm123456
 ```
 
 ## Build (native Java)
@@ -62,3 +61,7 @@ The driver returns the following metadata in addition to a DID document:
 
 * `nymResponse`: Response to the Indy `GET_NYM` operation, including `txnTime`, `state_proof`, and other information.
 * `attrResponse`: Response to the Indy `GET_ATTR` operation, including `txnTime`, `state_proof`, and other information.
+
+## Acknowledgement
+
+The driver is adapted from the [did:sov](https://github.com/decentralized-identity/uni-resolver-driver-did-sov) driver.
